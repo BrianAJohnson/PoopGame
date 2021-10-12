@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Poop Game</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@100;200&display=swap" rel="stylesheet">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			display: border-box;
+		}
+
+		body{
+			background: url("https://wallpapercave.com/wp/wp3998291.jpg");
+		}
+
+		h1, h2{
+			font-family: 'Permanent Marker', cursive;
+			color: white;
+			text-shadow: 10px 10px #663300; 
+		}
+
+		.info{
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			transition: top 1s, left 1s;
+		}
+
+		.button {
+  			background-color: rgba(76,175,80,0.8);
+  			border: none;
+  			border-radius: 10px;
+  			color: white;
+  			padding: 15px 32px;
+  			text-align: center;
+  			text-decoration: none;
+  			display: inline;
+  			font-size: 30px;
+			font-weight: thin;
+			font-family: cursive;
+  			margin: 4px 2px;
+  			cursor: none; 
+		}
+
+		.button:hover{
+ 			background-color: orange;
+  			box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+		}
+
+		.final{
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 60px;
+		}
+
+		.center{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	</style>
+	
+</head>
+<body>
+<div id="startScreen">
+	<h1 style="text-align: center; margin-top: 10%; font-size: 140px; font-weight: 100;">POOP</h1>
+	<h2 style="text-align: center; margin-top: -50px; font-size: 50px; font-weight: 100;">The Game</h2>
+	<div class="center">
+		<button class="button" onclick="init()">START</button>
+	</div>
+</div>
+<div id="game" style="display: none;">
+	<div id="scoreDiv" class="info">
+		<h1>Score: <span id="score"></span></h1>
+		<button id="restart" class="button" display="none" style="margin: auto;"onclick="init()">RESTART</button>
+	</div>
+	<canvas id="canvas" width="800" height="600" >
+</div>
+<script src="./scripts/animation.js"></script>
+<script src="./scripts/effects.js"></script>
+<script src="./scripts/enemies.js"></script>
+<script src="./scripts/player.js"></script>
+<script src="./scripts/main.js"></script>
+</body>
+</html>
